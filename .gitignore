@@ -1,0 +1,9 @@
+npm-debug.log
+node_modules
+.sass-cache
+gulpfile.js
+.git
+backend/log/
+dist/
+launch.json
+.DS_Store

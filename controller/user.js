@@ -1,11 +1,13 @@
 var User = require('../models/user.js');
-//首页数据
-exports.index = function *(next){
-    var userList = User.find({}),
-        obj = {
-            title:"首页",
-            users: userList
-        }
-    console.log(obj);
-    this.body = yield render('index',obj);
-}
+var user = new User({
+    name: 'vavid', //姓名
+    phone: 18601611256, //电话
+    email: 'vavid317@sina.com',  //邮箱
+    sex: '女', //性别
+    birthday: '2000-12-05', //生日
+    status: '在职'  //状态
+});
+// console.log(user.checkAll())
+// user.save(function(err,data){
+
+// })

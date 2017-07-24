@@ -9,5 +9,8 @@ router.get('/', function *(next) {
 router.get('/bar', function *(next) {
   this.body = 'this is a users/bar response!';
 });
+router.post('/add', function *(next){
+  console.log(this.request.body);
+})
 
 module.exports = router;

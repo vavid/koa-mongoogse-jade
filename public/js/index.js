@@ -15,27 +15,17 @@
             container.on('click', '#subUser', function () {
                 var data = $('form.form-inline').serializeArray(),
                     obj = {};
-
                 $.each(data, function (i, val) {
                     obj[val.name] = val.value;
                 });
-                // console.log(obj);
-                // $.ajaxSetup({
-                //     contentType: "application/x-www-form-urlencoded; charset=utf-8"
-                // });
-                // $.post('/add', obj, function (data) {
-                //     console.log('=======callback=====')
-                //     console.log(data);
-                // },'json');
                 $.ajax({
-                    type: 'POST',
+                    type: 'get',
                     url: '/add',
                     contentType: 'application/x-www-form-urlencoded; charset=utf-8',
                     dataType: 'json',
-                    data: JSON.stringify(obj),
+                    data: obj,
                     success:function(data){
-                        console.log('=======callback=====')
-                        console.log(data);
+                        location.reload();
                     } 
                 });
 

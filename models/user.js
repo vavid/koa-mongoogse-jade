@@ -13,19 +13,19 @@ var UserSchema = new Schema({
     birthday: String, //生日
     status: String  //状态
 });
-UserSchema.methods.checkAll = function(data){
-    this.model('User').find({},function(err, docs){
-        if(!err){
-            process.exit();
-            return docs;
-        }else{
-            throw err;
-            return null;
-        }
-    });
-}
-UserSchema.methods.saveData = function(data){
+// UserSchema.methods.checkAll = function(data){
+//     this.model('User').find({},function(err, docs){
+//         if(!err){
+//             process.exit();
+//             return docs;
+//         }else{
+//             throw err;
+//             return null;
+//         }
+//     });
+// }
+// UserSchema.methods.saveData = function(data){
 
-}
+// }
 //creating a model
 module.exports = mongoose.model('User', UserSchema);

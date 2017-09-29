@@ -25,10 +25,6 @@ mongoose.connection.on('error',function (err) {
  */
 mongoose.connection.on('disconnected', function () {    
     console.log('Mongoose connection disconnected');  
-});  
-// db.on('error', console.error.bind(console, '连接错误:'));
-// db.once('open', function() {
-//     console.log('连接成功');
-// })
+}); 
 
 module.exports = mongoose;

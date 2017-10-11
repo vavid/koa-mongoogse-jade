@@ -9,7 +9,8 @@
             var container = this.container;
             //新增成员
             container.on('click', '#addUser', function () {
-                container.find('.form-inline').removeClass('hide');
+                // container.find('.form-inline').removeClass('hide');
+                $('#myModal').modal();
             })
             //保存成员
             container.on('click', '#subUser', function () {
@@ -28,9 +29,6 @@
                         location.reload();
                     } 
                 });
-
-
-
             })
         }
     }

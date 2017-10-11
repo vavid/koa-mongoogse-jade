@@ -6,34 +6,60 @@ block content
     h2  #{tabName} 
     .pull-left.mgt-5
         button.btn.btn-info#addUser(type='button') 新增成员
-    .pull-left.mgt-5
-      form.form-inline.hide
-        .form-group
-          input.form-control#uname(type='text', name='name', placeholder='姓名')
-        .form-group
-          input.form-control#uphone(type='tel', name='phone', placeholder='电话')
-        .form-group
-          input.form-control#uphone(type='email', name='email', placeholder='邮箱')
-        .form-group
-          input.form-control#uphone(type='text', name='sex', placeholder='性别')
-        .form-group
-          input.form-control#ubirth(type='date', name='birthday', placeholder='生日')
-        button.btn.btn-primary#subUser(type='button') 提交
     table.table.table-striped
       thead
         tr
           td 姓名
+          td 昵称
+          td 性别
           td 手机
           td 邮件
-          td 性别
-          td 生日
-          td 状态
+          td 所属产线
+          td 操作
       tbody 
         - each user in data
           tr
             td #{user.name}
+            td #{user.nick}
+            td #{user.sex}
             td #{user.phone} 
             td #{user.email}
-            td #{user.sex}
-            td #{user.birthday}
-            td 在职
+            td #{user.belongs}
+            td 
+              button.btn.btn-primary#updateUser(type='button') 修改
+
+    div.modal.fade#myModal(tabindex='-1',role='dialog')
+      div.modal-dialog(rol='document')
+        div.modal-content
+          div.modal-header
+            button.close(type='button',data-dismiss='modal')
+              span(aria-hidden='true') &times;
+            h4.modal-title#myModalLabel 新增成员          
+          div.modal-body
+            form.form-horizontal.clearfix.col-sm-offset-3
+              .form-group.col-sm-10
+                input.form-control#uname(type='text', name='name', placeholder='姓名')
+              .form-group.col-sm-10
+                input.form-control#uname(type='text', name='nick', placeholder='昵称')
+              .form-group.col-sm-10
+                input.form-control#uphone(type='tel', name='phone', placeholder='电话')
+              .form-group.col-sm-10
+                input.form-control#uphone(type='email', name='email', placeholder='邮箱')
+              .form-group.col-sm-10
+                input.form-control#uphone(type='text', name='sex', placeholder='性别')
+              .form-group.col-sm-10
+                div.dropdown
+                  button.btn.btn-default.dropdown-toggle#dropdownMenu(type='button',data-toggle="dropdown",aria-haspopup="true",aria-expanded="true") 所属产线&nbsp;&nbsp;
+                    span.caret
+                  ul.dropdown-menu(aria-labelledby='dropdownMenu1')
+                    li
+                      a(href='#') 选项1
+                    li
+                      a(href='#') 选项1
+                    li
+                      a(href='#') 选项1
+                    li
+                      a(href='#') 选项1
+          div.modal-footer
+            button.btn.btn-default(type='button',data-dismiss='modal') 关闭
+            button.btn.btn-primary#subUser(type='button') 保存

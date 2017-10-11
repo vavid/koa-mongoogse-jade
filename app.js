@@ -15,7 +15,7 @@ var app = require('koa')(),
 // require('./controller/user.js');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var user = require('./routes/user');
 
 // error handler
 onerror(app);
@@ -25,22 +25,7 @@ app.use(views('views', {
   root: __dirname + '/views',
   default: 'jade'
 }));
-// app.use(koabody);
-// app.use(async ctx => {
-//   // the parsed body will store in ctx.request.body 
-//   // if nothing was parsed, body will be an empty object {} 
-//   ctx.body = ctx.request.body;
-// });
-// app.use(multer);
 
-// app.use(function *() {
-//   this.body = this.req.body;
-// });
-
-// ====
-// app.use(require('body-parser')().json());
-// app.use(require('body-parser')().urlencoded({extended: true}));
-// ====
 app.use(json());
 app.use(logger());
 
@@ -61,7 +46,6 @@ app.use(bodyParser());
 
 // routes definition
 app.use(index.routes(), index.allowedMethods());
-app.use(users.routes(), users.allowedMethods());
-// app.use(multer);
+app.use(user.routes(), user.allowedMethods());
 
 module.exports = app;

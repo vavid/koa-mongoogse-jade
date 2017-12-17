@@ -12,6 +12,11 @@
                 // container.find('.form-inline').removeClass('hide');
                 $('#myModal').modal();
             })
+            // 查询一个成员
+            container.on('click', '#updateUser', function (){
+                var id = $(this).data('id');
+                
+            })
             //保存成员
             container.on('click', '#subUser', function () {
                 var data = $('form.form-inline').serializeArray(),

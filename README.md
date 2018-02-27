@@ -10,8 +10,7 @@
 打开mongodb客户端工具MongoVUE建立数据可视化连接（本项目的库名为：schematest）
 
 
-[具体操作步骤可参考这里](#1)
-### [http://blog.csdn.net/lupengfei1009/article/details/50832996] {#1}  
+[具体操作步骤可参考这里](http://blog.csdn.net/lupengfei1009/article/details/50832996)
 
 ## 三、安装项目依赖包并启动
 ## 四、首页访问路径 

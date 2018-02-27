@@ -3,7 +3,7 @@ var User = require('../models/user.js');
 exports.index =  function* (next){ 
     var obj = {
       title: 'koa + mongodb',
-      tabName: '网校前端组'
+      tabName: '成员列表'
     };
     obj.data = yield User.find({}); //.limit(20) 默认每次查20条  todo
     // var page = parseInt(fields.page);

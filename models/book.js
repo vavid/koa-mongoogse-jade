@@ -11,6 +11,6 @@ var BookSchema = new Schema({
     status: String,  //借出状态
     lendnum: String //被借次数
 },{
-    collection: 'books' //指定用户模型对应的表：users
+    collection: 'books' //指定用户模型对应的表
 });
 module.exports = mongoose.model('Book', BookSchema);

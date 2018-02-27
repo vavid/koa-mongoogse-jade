@@ -19,14 +19,15 @@
             })
             //保存成员
             container.on('click', '#subUser', function () {
-                var data = $('form.form-inline').serializeArray(),
+                var data = $('form.form-horizontal').serializeArray(),
                     obj = {};
                 $.each(data, function (i, val) {
                     obj[val.name] = val.value;
                 });
+                console.log(obj)
                 $.ajax({
                     type: 'get',
-                    url: '/add',
+                    url: '/users/add',
                     contentType: 'application/x-www-form-urlencoded; charset=utf-8',
                     dataType: 'json',
                     data: obj,

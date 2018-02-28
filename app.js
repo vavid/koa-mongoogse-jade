@@ -10,7 +10,7 @@ var app = require('koa')(),
   // multer = require('koa-multer')(),
   bodyParser = require('koa-bodyparser'),
   // koabody = require('koa-body'),
-  routes = require('./routes/web.js'),
+  // routes = require('./routes/web.js'),
   onerror = require('koa-onerror');
 // require('./controller/user.js');
 

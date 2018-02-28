@@ -26,7 +26,8 @@ block content
             td #{user.email}
             td #{user.belongs}
             td 
-              button.btn.btn-primary#updateUser(type='button',data-id='#{user._id}') 修改
+              button.btn.btn-primary#getOneUser(type='button',data-id='#{user._id}') 修改
+              button.btn.btn-danger#delUser(type='button',data-id='#{user._id}') 删除
 
     div.modal.fade#myModal(tabindex='-1',role='dialog')
       div.modal-dialog(rol='document')

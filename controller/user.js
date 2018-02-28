@@ -21,22 +21,42 @@ exports.index =  function* (next){
 }
 // 查一条
 exports.queryOne = function* (next){
-    var userData = new User;
+    // var userData = new User;
     var id = this.request.query && this.request.query.id;
-    var userItem = yield userData.find({_id:id});
-    yield this.render('index', userItem);
-    
+    var userItem = null;
+    yield User.findById(id,function(err,res){
+        if(res){
+            userItem = Object.assign({},res);
+        }
+    });
+    this.body = userItem;
 }
 // 增
 exports.save = function* (next){
     var userData = new User;
     Object.assign(userData,this.request.query);
-    yield userData.save({});
+    var resObj = null;
+    yield userData.save({},function(err,res){
+        resObj = Object.assign({},res);
+    });
+    this.body = resObj;
 }
 // 更新
-exports.update = function* (next){
+exports.queryUpdate = function* (next){
+    var userData =  Object.assign({},this.request.query);
+    var id = this.request.query && this.request.query.id;
+    var itemObj = yield User.findByIdAndUpdate(id,{$set:userData});
+    this.body = itemObj;
+}
+// 删除
+exports.delOne = function* (next){
     var userData = new User;
-    var userItem = yield userData.findOneAndUpdate();
-    yield this.render('index', userItem);
-    
+    var id = this.request.query && this.request.query.id;
+    var resultObj = null;
+    yield User.remove({_id:id},function(err,result){
+        if(result){
+            resultObj = Object.assign({},result);
+        }
+    })
+    this.body = resultObj;
 }

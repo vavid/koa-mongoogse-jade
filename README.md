@@ -14,8 +14,9 @@
 
 ## 三、安装项目依赖包并启动
 ## 四、首页访问路径 
-http://localhost:5000/
+http://localhost:5000/    
 
+http://localhost:5000/users
 ## change log
 ### v0.8.0 (2018/1/28 12:00)
 * 完成用户chema 增删改查
